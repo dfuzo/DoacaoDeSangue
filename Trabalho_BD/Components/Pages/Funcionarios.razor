@@ -1,0 +1,152 @@
+﻿@page "/funcionarios"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject FuncionarioService FuncionarioService
+@inject HemocentroService HemocentroService
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+
+<PageTitle>Funcionários</PageTitle>
+
+@if (funcionarios == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gerenciamento de Funcionários</h2>
+
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Lista de Funcionários</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Ponto</th>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Cargo</th>
+                            <th>Hemocentro</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var funcionario in funcionarios)
+                        {
+                            <tr>
+                                <td>@funcionario.Ponto</td>
+                                <td>@funcionario.Nome</td>
+                                <td>@funcionario.Sexo</td>
+                                <td>@funcionario.Telefone</td>
+                                <td>@funcionario.Email</td>
+                                <td>@funcionario.Cargo</td>
+                                <td>@funcionario.Hemocentro</td>
+                                <td>
+                                    <button @onclick="() => EditFuncionario(funcionario)" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button @onclick="() => DeleteFuncionario(funcionario.Ponto)" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-4">
+            <h4 class="mb-3">Adicionar / Editar Funcionário</h4>
+            <div class="col-md-6">
+                <label class="form-label">Ponto:</label>
+                <input @bind="selectedFuncionario.Ponto" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nome:</label>
+                <input @bind="selectedFuncionario.Nome" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Sexo:</label>
+                <input @bind="selectedFuncionario.Sexo" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Telefone:</label>
+                <input @bind="selectedFuncionario.Telefone" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Email:</label>
+                <input @bind="selectedFuncionario.Email" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Cargo:</label>
+                <input @bind="selectedFuncionario.Cargo" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Hemocentro:</label>
+                <input @bind="selectedFuncionario.Hemocentro" class="form-control" />
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button @onclick="SaveFuncionario" class="btn btn-success me-2">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Funcionario> funcionarios = new();
+    private Funcionario selectedFuncionario = new Funcionario();
+
+    protected override async Task OnInitializedAsync()
+    {
+        funcionarios = await FuncionarioService.GetFuncionariosAsync();
+        Console.WriteLine("Página carregada!");
+    }
+
+    private async Task SaveFuncionario()
+    {
+        // Check if a Funcionario with this Ponto already exists in the DB
+        var existing = await FuncionarioService
+            .GetFuncionarioByIdAsync(selectedFuncionario.Ponto);
+
+        if (existing == null)
+        {
+            // Doesn’t exist => Insert
+            await FuncionarioService.AddFuncionarioAsync(selectedFuncionario);
+        }
+        else
+        {
+            // Exists => Update
+            await FuncionarioService.UpdateFuncionarioAsync(selectedFuncionario);
+        }
+
+        _navigationManager.NavigateTo("/funcionarios", forceLoad: true);
+    }
+
+
+    private void EditFuncionario(Funcionario funcionario)
+    {
+        selectedFuncionario = new Funcionario
+        {
+            Ponto = funcionario.Ponto,
+            Nome = funcionario.Nome,
+            Sexo = funcionario.Sexo,
+            Telefone = funcionario.Telefone,
+            Email = funcionario.Email,
+            Cargo = funcionario.Cargo,
+            Hemocentro = funcionario.Hemocentro
+        };
+    }
+
+    private async Task DeleteFuncionario(string ponto)
+    {
+        await FuncionarioService.DeleteFuncionarioAsync(ponto);
+        funcionarios = await FuncionarioService.GetFuncionariosAsync();
+        StateHasChanged();
+    }
+}

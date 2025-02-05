@@ -1,0 +1,111 @@
+﻿@page "/tipossanguineos"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject TipoSanguineoService TipoSanguineoService
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+
+<PageTitle>Tipos Sanguíneos</PageTitle>
+
+@if (tiposSanguineos == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gerenciamento de Tipos Sanguíneos</h2>
+
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Lista de Tipos Sanguíneos</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo</th>
+                            <th>Fator Rh</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var tipo in tiposSanguineos)
+                        {
+                            <tr>
+                                <td>@tipo.IdTipoSanguineo</td>
+                                <td>@tipo.Tipo</td>
+                                <td>@tipo.FatorRh</td>
+                                <td>
+                                    <button @onclick="() => EditTipoSanguineo(tipo)" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button @onclick="() => DeleteTipoSanguineo(tipo.IdTipoSanguineo)" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-4">
+            <h4 class="mb-3">Adicionar / Editar Tipo Sanguíneo</h4>
+            <div class="col-md-6">
+                <label class="form-label">Tipo:</label>
+                <input @bind="selectedTipoSanguineo.Tipo" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Fator Rh:</label>
+                <input @bind="selectedTipoSanguineo.FatorRh" class="form-control" />
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button @onclick="SaveTipoSanguineo" class="btn btn-success me-2">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<TipoSanguineo> tiposSanguineos = new();
+    private TipoSanguineo selectedTipoSanguineo = new TipoSanguineo();
+
+    protected override async Task OnInitializedAsync()
+    {
+        tiposSanguineos = await TipoSanguineoService.GetTipoSanguineosAsync();
+        Console.WriteLine("Página carregada!");
+    }
+
+    private async Task SaveTipoSanguineo()
+    {
+        if (selectedTipoSanguineo.IdTipoSanguineo != 0)
+        {
+            await TipoSanguineoService.UpdateTipoSanguineoAsync(selectedTipoSanguineo);
+        }
+        else
+        {
+            await TipoSanguineoService.AddTipoSanguineoAsync(selectedTipoSanguineo);
+        }
+        _navigationManager.NavigateTo("/tipossanguineos", forceLoad: true);
+    }
+
+    private void EditTipoSanguineo(TipoSanguineo tipo)
+    {
+        selectedTipoSanguineo = new TipoSanguineo
+            {
+                IdTipoSanguineo = tipo.IdTipoSanguineo,
+                Tipo = tipo.Tipo,
+                FatorRh = tipo.FatorRh
+            };
+    }
+
+    private async Task DeleteTipoSanguineo(int id)
+    {
+        await TipoSanguineoService.DeleteTipoSanguineoAsync(id);
+        tiposSanguineos = await TipoSanguineoService.GetTipoSanguineosAsync();
+        StateHasChanged();
+    }
+}

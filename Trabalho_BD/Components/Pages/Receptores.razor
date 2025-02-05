@@ -1,0 +1,165 @@
+﻿@page "/receptores"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject ReceptorService ReceptorService
+@inject TipoSanguineoService TipoSanguineoService
+@inject EnderecoService EnderecoService
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+
+<PageTitle>Receptores</PageTitle>
+
+@if (receptores == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gerenciamento de Receptores</h2>
+
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Lista de Receptores</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>CPF</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Sexo</th>
+                            <th>Peso</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>ID Tipo Sanguíneo</th>
+                            <th>ID Endereço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var receptor in receptores)
+                        {
+                            <tr>
+                                <td>@receptor.Cpf</td>
+                                <td>@receptor.Nome</td>
+                                <td>@receptor.DataNascimento.ToString("dd/MM/yyyy")</td>
+                                <td>@receptor.Sexo</td>
+                                <td>@receptor.Peso</td>
+                                <td>@receptor.Telefone</td>
+                                <td>@receptor.Email</td>
+                                <td>@receptor.IdTipoSanguineo</td>
+                                <td>@receptor.IdEndereco</td>
+                                <td>
+                                    <button @onclick="() => EditReceptor(receptor)" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button @onclick="() => DeleteReceptor(receptor.Cpf)" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-4">
+            <h4 class="mb-3">Adicionar / Editar Receptor</h4>
+            <div class="col-md-6">
+                <label class="form-label">CPF:</label>
+                <input @bind="selectedReceptor.Cpf" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nome:</label>
+                <input @bind="selectedReceptor.Nome" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Data de Nascimento:</label>
+                <input @bind="selectedReceptor.DataNascimento" type="date" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Sexo:</label>
+                <input @bind="selectedReceptor.Sexo" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Peso:</label>
+                <input @bind="selectedReceptor.Peso" type="number" step="0.01" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Telefone:</label>
+                <input @bind="selectedReceptor.Telefone" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Email:</label>
+                <input @bind="selectedReceptor.Email" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">ID Tipo Sanguíneo:</label>
+                <input @bind="selectedReceptor.IdTipoSanguineo" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">ID Endereço:</label>
+                <input @bind="selectedReceptor.IdEndereco" class="form-control" />
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button @onclick="SaveReceptor" class="btn btn-success me-2">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Receptor> receptores = new();
+    private Receptor selectedReceptor = new Receptor();
+
+    protected override async Task OnInitializedAsync()
+    {
+        receptores = await ReceptorService.GetReceptoresAsync();
+        Console.WriteLine("Página carregada!");
+    }
+
+    private async Task SaveReceptor()
+    {
+        // Check if a Funcionario with this Ponto already exists in the DB
+        var existing = await ReceptorService
+            .GetReceptorByIdAsync(selectedReceptor.Cpf);
+
+        if (existing == null)
+        {
+            // Doesn’t exist => Insert
+            await ReceptorService.AddReceptorAsync(selectedReceptor);
+        }
+        else
+        {
+            // Exists => Update
+            await ReceptorService.UpdateReceptorAsync(selectedReceptor);
+        }
+        _navigationManager.NavigateTo("/receptores", forceLoad: true);
+    }
+
+    private void EditReceptor(Receptor receptor)
+    {
+        selectedReceptor = new Receptor
+            {
+                Cpf = receptor.Cpf,
+                Nome = receptor.Nome,
+                DataNascimento = receptor.DataNascimento,
+                Sexo = receptor.Sexo,
+                Peso = receptor.Peso,
+                Telefone = receptor.Telefone,
+                Email = receptor.Email,
+                IdTipoSanguineo = receptor.IdTipoSanguineo,
+                IdEndereco = receptor.IdEndereco
+            };
+    }
+
+    private async Task DeleteReceptor(string cpf)
+    {
+        await ReceptorService.DeleteReceptorAsync(cpf);
+        receptores = await ReceptorService.GetReceptoresAsync();
+        StateHasChanged();
+    }
+}

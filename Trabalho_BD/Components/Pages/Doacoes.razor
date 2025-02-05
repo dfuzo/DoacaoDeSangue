@@ -1,0 +1,146 @@
+﻿@page "/doacoes"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject DoacaoService DoacaoService
+@inject DoadorService DoadorService
+@using System.Globalization
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+
+<PageTitle>Doações</PageTitle>
+
+@if (doacoes == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gerenciamento de Doações</h2>
+
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Lista de Doações</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>CPF Doador</th>
+                            <th>Data Doação</th>
+                            <th>Local</th>
+                            <th>Volume</th>
+                            <th>Id Tipo Sanguíneo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var doacao in doacoes)
+                        {
+                            <tr>
+                                <td>@doacao.IdDoacao</td>
+                                <td>@doacao.IdDoador</td>
+                                <td>@doacao.DataDoacao.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture)</td>
+                                <td>@doacao.LocalDoacao</td>
+                                <td>@doacao.VolumeColetado</td>
+                                <td>@doacao.TipoSanguineo</td>
+                                <td>
+                                    <button @onclick="() => EditDoacao(doacao)" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button @onclick="() => DeleteDoacao(doacao.IdDoacao)" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-4">
+            <h4 class="mb-3">Adicionar / Editar Doacao</h4>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label>CPF Doador:</label>
+                    <select @bind="selectedDoacao.IdDoador" class="form-control">
+                        <option value="">-- Select CPF Doador --</option>
+                        @foreach (var doador in doadores)
+                        {
+                            <option value="@doador.Cpf">@doador.Cpf - @doador.Nome</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Data Doacao:</label>
+                    <input @bind="selectedDoacao.DataDoacao" type="date" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Local Doacao:</label>
+                    <input @bind="selectedDoacao.LocalDoacao" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Volume (mL):</label>
+                    <input @bind="selectedDoacao.VolumeColetado" type="number" step="0.01" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Id Tipo Sanguíneo:</label>
+                    <input @bind="selectedDoacao.TipoSanguineo" type="number" class="form-control" />
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end mt-3">
+                <button @onclick="SaveDoacao" class="btn btn-success me-2">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+
+}
+
+@code {
+    private List<Doacao> doacoes = new();
+    private List<Doador> doadores = new();
+    private Doacao selectedDoacao = new Doacao();
+
+    protected override async Task OnInitializedAsync()
+    {
+        doacoes = await DoacaoService.GetDoacaosAsync();
+        doadores = await DoadorService.GetDoadoresAsync();
+        Console.WriteLine("pagina carregada!");
+    }
+
+    private async Task SaveDoacao()
+    {
+        if (selectedDoacao.IdDoacao != 0)
+        {
+            await DoacaoService.UpdateDoacaoAsync(selectedDoacao);
+        }
+        else
+        {
+            await DoacaoService.AddDoacaoAsync(selectedDoacao);
+        }
+        _navigationManager.NavigateTo("/doacoes", forceLoad: true);
+    }
+
+    private void EditDoacao(Doacao Doacao)
+    {
+        selectedDoacao = new Doacao
+            {
+                IdDoacao = Doacao.IdDoacao,
+                IdDoador = Doacao.IdDoador,
+                DataDoacao = Doacao.DataDoacao,
+                LocalDoacao = Doacao.LocalDoacao,
+                VolumeColetado = Doacao.VolumeColetado,
+                TipoSanguineo = Doacao.TipoSanguineo
+            };
+    }
+
+    private async Task DeleteDoacao(int id)
+    {
+        await DoacaoService.DeleteDoacaoAsync(id);
+        doacoes = await DoacaoService.GetDoacaosAsync(); // ✅ Refresh list after delete
+        StateHasChanged(); // ✅ Ensure UI updates
+    }
+}

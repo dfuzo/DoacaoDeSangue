@@ -1,0 +1,137 @@
+﻿@page "/hemocentros"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject HemocentroService HemocentroService
+@inject EnderecoService EnderecoService
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+
+<PageTitle>Hemocentros</PageTitle>
+
+@if (hemocentros == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gerenciamento de Hemocentros</h2>
+
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Lista de Hemocentros</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>CNPJ</th>
+                            <th>Nome</th>
+                            <th>ID Endereço</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var hemocentro in hemocentros)
+                        {
+                            <tr>
+                                <td>@hemocentro.Cnpj</td>
+                                <td>@hemocentro.Nome</td>
+                                <td>@hemocentro.IdEndereco</td>
+                                <td>@hemocentro.Telefone</td>
+                                <td>@hemocentro.Email</td>
+                                <td>
+                                    <button @onclick="() => EditHemocentro(hemocentro)" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Editar
+                                    </button>
+                                    <button @onclick="() => DeleteHemocentro(hemocentro.Cnpj)" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card shadow p-4 mt-4">
+            <h4 class="mb-3">Adicionar / Editar Hemocentro</h4>
+            <div class="col-md-6">
+                <label class="form-label">CNPJ:</label>
+                <input @bind="selectedHemocentro.Cnpj" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nome:</label>
+                <input @bind="selectedHemocentro.Nome" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">ID Endereço:</label>
+                <input @bind="selectedHemocentro.IdEndereco" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Telefone:</label>
+                <input @bind="selectedHemocentro.Telefone" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Email:</label>
+                <input @bind="selectedHemocentro.Email" class="form-control" />
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button @onclick="SaveHemocentro" class="btn btn-success me-2">
+                    <i class="bi bi-save"></i> Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Hemocentro> hemocentros = new();
+    private Hemocentro selectedHemocentro = new Hemocentro();
+
+    protected override async Task OnInitializedAsync()
+    {
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        Console.WriteLine("Página carregada!");
+    }
+
+    private async Task SaveHemocentro()
+    {
+        // Check if a Funcionario with this Ponto already exists in the DB
+        var existing = await HemocentroService
+            .GetHemocentroByIdAsync(selectedHemocentro.Cnpj);
+
+        if (existing == null)
+        {
+            // Doesn’t exist => Insert
+            await HemocentroService.AddHemocentroAsync(selectedHemocentro);
+        }
+        else
+        {
+            // Exists => Update
+            await HemocentroService.UpdateHemocentroAsync(selectedHemocentro);
+        }
+
+        _navigationManager.NavigateTo("/hemocentros", forceLoad: true);
+    }
+
+    private void EditHemocentro(Hemocentro hemocentro)
+    {
+        selectedHemocentro = new Hemocentro
+            {
+                Cnpj = hemocentro.Cnpj,
+                Nome = hemocentro.Nome,
+                IdEndereco = hemocentro.IdEndereco,
+                Telefone = hemocentro.Telefone,
+                Email = hemocentro.Email
+            };
+    }
+
+    private async Task DeleteHemocentro(string cnpj)
+    {
+        await HemocentroService.DeleteHemocentroAsync(cnpj);
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        StateHasChanged();
+    }
+}

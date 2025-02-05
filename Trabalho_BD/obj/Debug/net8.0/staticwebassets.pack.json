@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Trabalho_BD.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Trabalho_BD.ns7d0ndvdi.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\Img\\davi.jpeg",
+      "PackagePath": "staticwebassets\\Img\\davi.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\Img\\pablo.jpeg",
+      "PackagePath": "staticwebassets\\Img\\pablo.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\Img\\teixas.jpeg",
+      "PackagePath": "staticwebassets\\Img\\teixas.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Trabalho_BD.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Trabalho_BD.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Trabalho_BD.props",
+      "PackagePath": "build\\Trabalho_BD.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Trabalho_BD.props",
+      "PackagePath": "buildMultiTargeting\\Trabalho_BD.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Trabalho_BD.props",
+      "PackagePath": "buildTransitive\\Trabalho_BD.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
