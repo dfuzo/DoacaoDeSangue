@@ -1,9 +1,11 @@
 ﻿@page "/receptores"
 @rendermode InteractiveServer
+
 @inject NavigationManager _navigationManager
 @inject ReceptorService ReceptorService
 @inject TipoSanguineoService TipoSanguineoService
 @inject EnderecoService EnderecoService
+
 @using Trabalho_BD.Data.Models
 @using Trabalho_BD.Data.Services
 
@@ -31,8 +33,8 @@ else
                             <th>Peso</th>
                             <th>Telefone</th>
                             <th>Email</th>
-                            <th>ID Tipo Sanguíneo</th>
-                            <th>ID Endereço</th>
+                            <th>Tipo Sanguíneo</th>
+                            <th>Endereço</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -47,8 +49,32 @@ else
                                 <td>@receptor.Peso</td>
                                 <td>@receptor.Telefone</td>
                                 <td>@receptor.Email</td>
-                                <td>@receptor.IdTipoSanguineo</td>
-                                <td>@receptor.IdEndereco</td>
+                                <td>
+                                    @{
+                                        var tipo = tipos.FirstOrDefault(t => t.IdTipoSanguineo == receptor.IdTipoSanguineo);
+                                        if (tipo != null)
+                                        {
+                                            <text>@($"{tipo.Tipo} {tipo.FatorRh}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@receptor.IdTipoSanguineo</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        var end = enderecos.FirstOrDefault(e => e.IdEndereco == receptor.IdEndereco);
+                                        if (end != null)
+                                        {
+                                            <text>@($"{end.Cep}, {end.Cidade}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@receptor.IdEndereco</text>
+                                        }
+                                    }
+                                </td>
                                 <td>
                                     <button @onclick="() => EditReceptor(receptor)" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Editar
@@ -70,38 +96,59 @@ else
                 <label class="form-label">CPF:</label>
                 <input @bind="selectedReceptor.Cpf" class="form-control" />
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Nome:</label>
                 <input @bind="selectedReceptor.Nome" class="form-control" />
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Data de Nascimento:</label>
                 <input @bind="selectedReceptor.DataNascimento" type="date" class="form-control" />
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Sexo:</label>
                 <input @bind="selectedReceptor.Sexo" class="form-control" />
             </div>
+
             <div class="col-md-4">
                 <label class="form-label">Peso:</label>
                 <input @bind="selectedReceptor.Peso" type="number" step="0.01" class="form-control" />
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Telefone:</label>
                 <input @bind="selectedReceptor.Telefone" class="form-control" />
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Email:</label>
                 <input @bind="selectedReceptor.Email" class="form-control" />
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">ID Tipo Sanguíneo:</label>
-                <input @bind="selectedReceptor.IdTipoSanguineo" class="form-control" />
+                <label class="form-label">Tipo Sanguíneo:</label>
+                <select @bind="selectedReceptor.IdTipoSanguineo" class="form-control">
+                    <option value="">-- Selecione o tipo sanguíneo --</option>
+                    @foreach (var tipo in tipos)
+                    {
+                        <option value="@tipo.IdTipoSanguineo">@tipo.Tipo @tipo.FatorRh</option>
+                    }
+                </select>
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">ID Endereço:</label>
-                <input @bind="selectedReceptor.IdEndereco" class="form-control" />
+                <label class="form-label">Endereço:</label>
+                <select @bind="selectedReceptor.IdEndereco" class="form-control">
+                    <option value="">-- Selecione o endereço --</option>
+                    @foreach (var end in enderecos)
+                    {
+                        <option value="@end.IdEndereco">@end.IdEndereco - @end.Cep, @end.Cidade</option>
+                    }
+                </select>
             </div>
+
             <div class="d-flex justify-content-end mt-3">
                 <button @onclick="SaveReceptor" class="btn btn-success me-2">
                     <i class="bi bi-save"></i> Salvar
@@ -115,16 +162,20 @@ else
     private List<Receptor> receptores = new();
     private Receptor selectedReceptor = new Receptor();
 
+    private List<TipoSanguineo> tipos = new();
+    private List<Endereco> enderecos = new();
+
     protected override async Task OnInitializedAsync()
     {
         receptores = await ReceptorService.GetReceptoresAsync();
+        tipos = await TipoSanguineoService.GetTipoSanguineosAsync();
+        enderecos = await EnderecoService.GetEnderecosAsync();
         Console.WriteLine("Página carregada!");
     }
 
     private async Task SaveReceptor()
     {
-        var existing = await ReceptorService
-            .GetReceptorByIdAsync(selectedReceptor.Cpf);
+        var existing = await ReceptorService.GetReceptorByIdAsync(selectedReceptor.Cpf);
 
         if (existing == null)
         {
@@ -134,6 +185,7 @@ else
         {
             await ReceptorService.UpdateReceptorAsync(selectedReceptor);
         }
+
         _navigationManager.NavigateTo("/receptores", forceLoad: true);
     }
 

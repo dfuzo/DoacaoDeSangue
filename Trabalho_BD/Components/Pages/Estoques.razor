@@ -55,9 +55,15 @@ else
 
         <div class="card shadow p-4 mt-4">
             <h4 class="mb-3">Adicionar / Editar Estoque</h4>
-            <div class="col-md-6">
-                <label class="form-label">ID Hemocentro:</label>
-                <input @bind="selectedEstoque.IdHemocentro" class="form-control" />
+            <div class="mb-3">
+                <label>Hemocentro:</label>
+                <select @bind="selectedEstoque.IdHemocentro" class="form-control">
+                    <option value="">-- Selecione o hemocentro --</option>
+                    @foreach (var hemocentro in hemocentros)
+                    {
+                        <option value="@hemocentro.Cnpj">@hemocentro.Cnpj - @hemocentro.Nome</option>
+                    }
+                </select>
             </div>
             <div class="col-md-6">
                 <label class="form-label">Tipo de Item:</label>
@@ -80,10 +86,12 @@ else
 @code {
     private List<Estoque> estoques = new();
     private Estoque selectedEstoque = new Estoque();
+    private List<Hemocentro> hemocentros = new();
 
     protected override async Task OnInitializedAsync()
     {
         estoques = await EstoqueService.GetEstoquesAsync();
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
         Console.WriteLine("Página carregada!");
     }
 

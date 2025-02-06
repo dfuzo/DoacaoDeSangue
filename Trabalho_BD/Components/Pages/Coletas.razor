@@ -5,6 +5,8 @@
 @inject DoadorService DoadorService
 @inject FuncionarioService FuncionarioService
 @inject HemocentroService HemocentroService
+@inject FuncionarioService FuncionarioService
+@inject TipoSanguineoService TipoSanguineoService
 @using System.Globalization
 @using Trabalho_BD.Data.Models
 @using Trabalho_BD.Data.Services
@@ -70,16 +72,22 @@ else
                 <div class="mb-3">
                     <label>CPF Doador:</label>
                     <select @bind="selectedColeta.CpfDoador" class="form-control">
-                        <option value="">-- Select CPF Doador --</option>
+                        <option value="">-- Selecione Doador --</option>
                         @foreach (var doador in doadores)
                         {
                             <option value="@doador.Cpf">@doador.Cpf - @doador.Nome</option>
                         }
                     </select>
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label">Ponto Funcionário:</label>
-                    <input @bind="selectedColeta.PontoFuncionario" class="form-control" placeholder="Ponto do funcionário" />
+                <div class="mb-3">
+                    <label>Ponto Funcionario:</label>
+                    <select @bind="selectedColeta.PontoFuncionario" class="form-control">
+                        <option value="">-- Selecione o Funcionario --</option>
+                        @foreach (var funcionario in funcionarios)
+                        {
+                            <option value="@funcionario.Ponto">@funcionario.Ponto - @funcionario.Nome</option>
+                        }
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Data Coleta:</label>
@@ -93,13 +101,25 @@ else
                     <label class="form-label">Volume (mL):</label>
                     <input @bind="selectedColeta.Volume" type="number" step="0.01" class="form-control" />
                 </div>
-                <div class="col-md-4">
-                    <label class="form-label">Id Hemocentro:</label>
-                    <input @bind="selectedColeta.IdHemocentro" class="form-control" />
+                <div class="mb-3">
+                    <label>Hemocentro:</label>
+                    <select @bind="selectedColeta.IdHemocentro" class="form-control">
+                        <option value="">-- Selecione o hemocentro --</option>
+                        @foreach (var hemocentro in hemocentros)
+                        {
+                            <option value="@hemocentro.Cnpj">@hemocentro.Cnpj - @hemocentro.Nome</option>
+                        }
+                    </select>
                 </div>
-                <div class="col-md-4">
-                    <label class="form-label">Id Tipo Sanguíneo:</label>
-                    <input @bind="selectedColeta.IdTipoSanguineo" type="number" class="form-control" />
+                <div class="mb-3">
+                    <label>Tipo Sanguineo:</label>
+                    <select @bind="selectedColeta.IdTipoSanguineo" class="form-control">
+                        <option value="">-- Selecione o tipo sanguineo --</option>
+                        @foreach (var tipoSanguineo in tipos)
+                        {
+                            <option value="@tipoSanguineo.IdTipoSanguineo">@tipoSanguineo.Tipo @tipoSanguineo.FatorRh</option>
+                        }
+                    </select>
                 </div>
             </div>
 
@@ -118,13 +138,18 @@ else
     private List<Coleta> coletas = new();
     private Coleta selectedColeta = new Coleta();
     private List<Doador> doadores = new();
+    private List<Funcionario> funcionarios = new();
+    private List<Hemocentro> hemocentros = new();
+    private List<TipoSanguineo> tipos = new();
 
     protected override async Task OnInitializedAsync()
     {
         coletas = await ColetaService.GetColetasAsync();
         doadores = await DoadorService.GetDoadoresAsync();
+        funcionarios = await FuncionarioService.GetFuncionariosAsync();
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        tipos = await TipoSanguineoService.GetTipoSanguineosAsync();
         Console.WriteLine("pagina carregada!");
-        // await ColetaService.AddColetaAsync(Teste);
     }
 
     private async Task SaveColeta()
@@ -138,9 +163,6 @@ else
             await ColetaService.AddColetaAsync(selectedColeta);
         }
 
-        // selectedColeta = new Coleta(); // ✅ Reset the form
-        // coletas = await ColetaService.GetColetasAsync(); // ✅ Refresh list after adding
-        // StateHasChanged(); // ✅ Ensure UI updates
         _navigationManager.NavigateTo("/coletas", forceLoad: true);
     }
 
@@ -162,7 +184,7 @@ else
     private async Task DeleteColeta(int id)
     {
         await ColetaService.DeleteColetaAsync(id);
-        coletas = await ColetaService.GetColetasAsync(); // ✅ Refresh list after delete
-        StateHasChanged(); // ✅ Ensure UI updates
+        coletas = await ColetaService.GetColetasAsync(); 
+        StateHasChanged(); 
     }
 }

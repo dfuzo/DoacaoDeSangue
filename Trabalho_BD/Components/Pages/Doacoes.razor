@@ -3,6 +3,7 @@
 @inject NavigationManager _navigationManager
 @inject DoacaoService DoacaoService
 @inject DoadorService DoadorService
+@inject TipoSanguineoService TipoSanguineoService
 @using System.Globalization
 @using Trabalho_BD.Data.Models
 @using Trabalho_BD.Data.Services
@@ -29,7 +30,7 @@ else
                             <th>Data Doação</th>
                             <th>Local</th>
                             <th>Volume</th>
-                            <th>Id Tipo Sanguíneo</th>
+                            <th>Tipo Sanguíneo</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -42,7 +43,19 @@ else
                                 <td>@doacao.DataDoacao.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture)</td>
                                 <td>@doacao.LocalDoacao</td>
                                 <td>@doacao.VolumeColetado</td>
-                                <td>@doacao.TipoSanguineo</td>
+                                <td>
+                                    @{
+                                        var tipoNome = tipos.FirstOrDefault(t => t.IdTipoSanguineo == doacao.TipoSanguineo);
+                                        if (tipoNome != null)
+                                        {
+                                            <text>@($"{tipoNome.Tipo} {tipoNome.FatorRh}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@doacao.TipoSanguineo</text>
+                                        }
+                                    }
+                                </td>
                                 <td>
                                     <button @onclick="() => EditDoacao(doacao)" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Editar
@@ -59,12 +72,12 @@ else
         </div>
 
         <div class="card shadow p-4 mt-4">
-            <h4 class="mb-3">Adicionar / Editar Doacao</h4>
+            <h4 class="mb-3">Adicionar / Editar Doação</h4>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label>CPF Doador:</label>
                     <select @bind="selectedDoacao.IdDoador" class="form-control">
-                        <option value="">-- Select CPF Doador --</option>
+                        <option value="">-- Selecione o Doador --</option>
                         @foreach (var doador in doadores)
                         {
                             <option value="@doador.Cpf">@doador.Cpf - @doador.Nome</option>
@@ -72,11 +85,11 @@ else
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Data Doacao:</label>
+                    <label class="form-label">Data Doação:</label>
                     <input @bind="selectedDoacao.DataDoacao" type="date" class="form-control" />
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">Local Doacao:</label>
+                    <label class="form-label">Local Doação:</label>
                     <input @bind="selectedDoacao.LocalDoacao" class="form-control" />
                 </div>
                 <div class="col-md-4">
@@ -84,8 +97,14 @@ else
                     <input @bind="selectedDoacao.VolumeColetado" type="number" step="0.01" class="form-control" />
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label">Id Tipo Sanguíneo:</label>
-                    <input @bind="selectedDoacao.TipoSanguineo" type="number" class="form-control" />
+                    <label class="form-label">Tipo Sanguíneo:</label>
+                    <select @bind="selectedDoacao.TipoSanguineo" class="form-control">
+                        <option value="">-- Selecione o tipo sanguíneo --</option>
+                        @foreach (var tipo in tipos)
+                        {
+                            <option value="@tipo.IdTipoSanguineo">@tipo.Tipo @tipo.FatorRh</option>
+                        }
+                    </select>
                 </div>
             </div>
 
@@ -96,18 +115,19 @@ else
             </div>
         </div>
     </div>
-
 }
 
 @code {
     private List<Doacao> doacoes = new();
     private List<Doador> doadores = new();
+    private List<TipoSanguineo> tipos = new();  
     private Doacao selectedDoacao = new Doacao();
 
     protected override async Task OnInitializedAsync()
     {
         doacoes = await DoacaoService.GetDoacaosAsync();
         doadores = await DoadorService.GetDoadoresAsync();
+        tipos = await TipoSanguineoService.GetTipoSanguineosAsync(); 
         Console.WriteLine("pagina carregada!");
     }
 
@@ -121,19 +141,20 @@ else
         {
             await DoacaoService.AddDoacaoAsync(selectedDoacao);
         }
+
         _navigationManager.NavigateTo("/doacoes", forceLoad: true);
     }
 
-    private void EditDoacao(Doacao Doacao)
+    private void EditDoacao(Doacao doacao)
     {
         selectedDoacao = new Doacao
             {
-                IdDoacao = Doacao.IdDoacao,
-                IdDoador = Doacao.IdDoador,
-                DataDoacao = Doacao.DataDoacao,
-                LocalDoacao = Doacao.LocalDoacao,
-                VolumeColetado = Doacao.VolumeColetado,
-                TipoSanguineo = Doacao.TipoSanguineo
+                IdDoacao = doacao.IdDoacao,
+                IdDoador = doacao.IdDoador,
+                DataDoacao = doacao.DataDoacao,
+                LocalDoacao = doacao.LocalDoacao,
+                VolumeColetado = doacao.VolumeColetado,
+                TipoSanguineo = doacao.TipoSanguineo
             };
     }
 

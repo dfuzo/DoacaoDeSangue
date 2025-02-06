@@ -1,7 +1,11 @@
 ﻿@page "/doadores"
 @rendermode InteractiveServer
+
 @inject NavigationManager _navigationManager
 @inject DoadorService DoadorService
+@inject TipoSanguineoService TipoSanguineoService
+@inject EnderecoService EnderecoService
+
 @using System.Globalization
 @using Trabalho_BD.Data.Models
 @using Trabalho_BD.Data.Services
@@ -30,7 +34,7 @@ else
                             <th>Peso</th>
                             <th>Telefone</th>
                             <th>Email</th>
-                            <th>Tipo Sanguineo</th>
+                            <th>Tipo Sanguíneo</th>
                             <th>Endereço</th>
                             <th>Ação</th>
                         </tr>
@@ -46,8 +50,32 @@ else
                                 <td>@doador.Peso</td>
                                 <td>@doador.Telefone</td>
                                 <td>@doador.Email</td>
-                                <td>@doador.Id_Tipo_Sanguineo</td>
-                                <td>@doador.Id_Endereco</td>
+                                <td>
+                                    @{
+                                        var tipo = tipos.FirstOrDefault(t => t.IdTipoSanguineo == doador.Id_Tipo_Sanguineo);
+                                        if (tipo != null)
+                                        {
+                                            <text>@($"{tipo.Tipo} {tipo.FatorRh}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@doador.Id_Tipo_Sanguineo</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        var end = enderecos.FirstOrDefault(e => e.IdEndereco == doador.Id_Endereco);
+                                        if (end != null)
+                                        {
+                                            <text>@($"{end.Cep}, {end.Cidade}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@doador.Id_Endereco</text>
+                                        }
+                                    }
+                                </td>
                                 <td>
                                     <button @onclick="() => EditDoador(doador)" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Editar
@@ -97,12 +125,24 @@ else
                     <input @bind="selectedDoador.Email" class="form-control" />
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label">Id Tipo Sanguíneo:</label>
-                    <input @bind="selectedDoador.Id_Tipo_Sanguineo" type="number" class="form-control" />
+                    <label class="form-label">Tipo Sanguíneo:</label>
+                    <select @bind="selectedDoador.Id_Tipo_Sanguineo" class="form-control">
+                        <option value="">-- Selecione o Tipo Sanguíneo --</option>
+                        @foreach (var tipo in tipos)
+                        {
+                            <option value="@tipo.IdTipoSanguineo">@tipo.Tipo @tipo.FatorRh</option>
+                        }
+                    </select>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label">ID Endereço:</label>
-                    <input @bind="selectedDoador.Id_Endereco" class="form-control" />
+                    <label class="form-label">Endereço:</label>
+                    <select @bind="selectedDoador.Id_Endereco" class="form-control">
+                        <option value="">-- Selecione o Endereço --</option>
+                        @foreach (var end in enderecos)
+                        {
+                            <option value="@end.IdEndereco">@end.IdEndereco - @end.Cep, @end.Cidade</option>
+                        }
+                    </select>
                 </div>
             </div>
 
@@ -113,29 +153,36 @@ else
             </div>
         </div>
     </div>
-
 }
 
 @code {
     private List<Doador> doadores = new();
+    private List<TipoSanguineo> tipos = new();
+    private List<Endereco> enderecos = new();
     private Doador selectedDoador = new Doador();
 
     protected override async Task OnInitializedAsync()
     {
         doadores = await DoadorService.GetDoadoresAsync();
+        tipos = await TipoSanguineoService.GetTipoSanguineosAsync();
+        enderecos = await EnderecoService.GetEnderecosAsync();
         Console.WriteLine("pagina carregada!");
     }
 
     private async Task SaveDoador()
     {
-        if (selectedDoador.Cpf != null)
-        {
-            await DoadorService.UpdateDoadorAsync(selectedDoador);
-        }
-        else
+        var existing = await DoadorService
+            .GetDoadorByIdAsync(selectedDoador.Cpf);
+
+        if (existing == null)
         {
             await DoadorService.AddDoadorAsync(selectedDoador);
         }
+        else
+        {
+            await DoadorService.UpdateDoadorAsync(selectedDoador);
+        }
+
         _navigationManager.NavigateTo("/doadores", forceLoad: true);
     }
 

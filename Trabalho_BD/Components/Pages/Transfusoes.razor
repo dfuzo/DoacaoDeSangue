@@ -7,6 +7,7 @@
 @inject FuncionarioService FuncionarioService
 @inject HemocentroService HemocentroService
 @inject TipoSanguineoService TipoSanguineoService
+
 @using Trabalho_BD.Data.Models
 @using Trabalho_BD.Data.Services
 
@@ -28,13 +29,13 @@ else
                     <thead class="table-dark">
                         <tr>
                             <th>ID Transfusão</th>
-                            <th>ID Coleta</th>
-                            <th>CPF Receptor</th>
-                            <th>Ponto Funcionário</th>
+                            <th>Coleta</th>
+                            <th>Receptor</th>
+                            <th>Funcionário</th>
                             <th>Data Transfusão</th>
                             <th>Volume</th>
-                            <th>ID Hemocentro</th>
-                            <th>ID Tipo Sanguíneo</th>
+                            <th>Hemocentro</th>
+                            <th>Tipo Sanguíneo</th>
                             <th>Comprovante</th>
                             <th>Ações</th>
                         </tr>
@@ -44,17 +45,79 @@ else
                         {
                             <tr>
                                 <td>@transfusao.IdTransfusao</td>
-                                <td>@transfusao.IdColeta</td>
-                                <td>@transfusao.CpfReceptor</td>
-                                <td>@transfusao.PontoFuncionario</td>
+                                <td>
+                                    @{
+                                        var coleta = coletas.FirstOrDefault(c => c.IdColeta == transfusao.IdColeta);
+                                        if (coleta != null)
+                                        {
+                                            <text>@($"Coleta #{coleta.IdColeta} - CPF: {coleta.CpfDoador}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@transfusao.IdColeta</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        var rec = receptores.FirstOrDefault(r => r.Cpf == transfusao.CpfReceptor);
+                                        if (rec != null)
+                                        {
+                                            <text>@($"{rec.Cpf} - {rec.Nome}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@transfusao.CpfReceptor</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        var func = funcionarios.FirstOrDefault(f => f.Ponto == transfusao.PontoFuncionario);
+                                        if (func != null)
+                                        {
+                                            <text>@($"{func.Ponto} - {func.Nome}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@transfusao.PontoFuncionario</text>
+                                        }
+                                    }
+                                </td>
                                 <td>@transfusao.DataTransfusao.ToString("dd/MM/yyyy")</td>
                                 <td>@transfusao.Volume</td>
-                                <td>@transfusao.IdHemocentro</td>
-                                <td>@transfusao.IdTipoSanguineo</td>
+                                <td>
+                                    @{
+                                        var h = hemocentros.FirstOrDefault(hc => hc.Cnpj == transfusao.IdHemocentro);
+                                        if (h != null)
+                                        {
+                                            <text>@($"{h.Cnpj} - {h.Nome}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@transfusao.IdHemocentro</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        var t = tipos.FirstOrDefault(ts => ts.IdTipoSanguineo == transfusao.IdTipoSanguineo);
+                                        if (t != null)
+                                        {
+                                            <text>@($"{t.Tipo} {t.FatorRh}")</text>
+                                        }
+                                        else
+                                        {
+                                            <text>@transfusao.IdTipoSanguineo</text>
+                                        }
+                                    }
+                                </td>
                                 <td>
                                     <button @onclick="() => GerarPdf(transfusao)" class="btn btn-info btn-sm">
                                         <i class="bi bi-pencil-square"></i>Comprovante
                                     </button>
+                                </td>
+                                <td>
                                     <button @onclick="() => EditTransfusao(transfusao)" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Editar
                                     </button>
@@ -72,33 +135,70 @@ else
         <div class="card shadow p-4 mt-4">
             <h4 class="mb-3">Adicionar / Editar Transfusão</h4>
             <div class="col-md-6">
-                <label class="form-label">ID Coleta:</label>
-                <input @bind="selectedTransfusao.IdColeta" class="form-control" />
+                <label class="form-label">Coleta:</label>
+                <select @bind="selectedTransfusao.IdColeta" class="form-control">
+                    <option value="">-- Selecione a Coleta --</option>
+                    @foreach (var coleta in coletas)
+                    {
+                        <option value="@coleta.IdColeta">@($"#{coleta.IdColeta} - CPF: {coleta.CpfDoador}")</option>
+                    }
+                </select>
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">CPF Receptor:</label>
-                <input @bind="selectedTransfusao.CpfReceptor" class="form-control" />
+                <label class="form-label">Receptor:</label>
+                <select @bind="selectedTransfusao.CpfReceptor" class="form-control">
+                    <option value="">-- Selecione o Receptor --</option>
+                    @foreach (var rec in receptores)
+                    {
+                        <option value="@rec.Cpf">@($"{rec.Cpf} - {rec.Nome}")</option>
+                    }
+                </select>
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">Ponto Funcionário:</label>
-                <input @bind="selectedTransfusao.PontoFuncionario" class="form-control" />
+                <label class="form-label">Funcionário:</label>
+                <select @bind="selectedTransfusao.PontoFuncionario" class="form-control">
+                    <option value="">-- Selecione o Funcionário --</option>
+                    @foreach (var func in funcionarios)
+                    {
+                        <option value="@func.Ponto">@($"{func.Ponto} - {func.Nome}")</option>
+                    }
+                </select>
             </div>
+
             <div class="col-md-6">
                 <label class="form-label">Data Transfusão:</label>
                 <input @bind="selectedTransfusao.DataTransfusao" type="date" class="form-control" />
             </div>
+
             <div class="col-md-4">
                 <label class="form-label">Volume:</label>
                 <input @bind="selectedTransfusao.Volume" type="number" step="0.01" class="form-control" />
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">ID Hemocentro:</label>
-                <input @bind="selectedTransfusao.IdHemocentro" class="form-control" />
+                <label class="form-label">Hemocentro:</label>
+                <select @bind="selectedTransfusao.IdHemocentro" class="form-control">
+                    <option value="">-- Selecione o Hemocentro --</option>
+                    @foreach (var h in hemocentros)
+                    {
+                        <option value="@h.Cnpj">@($"{h.Cnpj} - {h.Nome}")</option>
+                    }
+                </select>
             </div>
+
             <div class="col-md-6">
-                <label class="form-label">ID Tipo Sanguíneo:</label>
-                <input @bind="selectedTransfusao.IdTipoSanguineo" class="form-control" />
+                <label class="form-label">Tipo Sanguíneo:</label>
+                <select @bind="selectedTransfusao.IdTipoSanguineo" class="form-control">
+                    <option value="">-- Selecione o Tipo Sanguíneo --</option>
+                    @foreach (var t in tipos)
+                    {
+                        <option value="@t.IdTipoSanguineo">@($"{t.Tipo} {t.FatorRh}")</option>
+                    }
+                </select>
             </div>
+
             <div class="d-flex justify-content-end mt-3">
                 <button @onclick="SaveTransfusao" class="btn btn-success me-2">
                     <i class="bi bi-save"></i> Salvar
@@ -112,9 +212,21 @@ else
     private List<Transfusao> transfusoes = new();
     private Transfusao selectedTransfusao = new Transfusao();
 
+    private List<Coleta> coletas = new();
+    private List<Receptor> receptores = new();
+    private List<Funcionario> funcionarios = new();
+    private List<Hemocentro> hemocentros = new();
+    private List<TipoSanguineo> tipos = new();
+
     protected override async Task OnInitializedAsync()
     {
         transfusoes = await TransfusaoService.GetTransfusoesAsync();
+        coletas = await ColetaService.GetColetasAsync();
+        receptores = await ReceptorService.GetReceptoresAsync();
+        funcionarios = await FuncionarioService.GetFuncionariosAsync();
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        tipos = await TipoSanguineoService.GetTipoSanguineosAsync();
+
         Console.WriteLine("Página carregada!");
     }
 
@@ -131,8 +243,8 @@ else
         _navigationManager.NavigateTo("/transfusoes", forceLoad: true);
     }
 
-    private async Task GerarPdf(Transfusao transfusao){
-        int id = transfusao.IdTransfusao;
+    private async Task GerarPdf(Transfusao transfusao)
+    {
         await TransfusaoService.GerarComprovante(transfusao);
         StateHasChanged();
         _navigationManager.NavigateTo($"/comprovante/{transfusao.IdTransfusao}");

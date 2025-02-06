@@ -66,8 +66,14 @@ else
                 <input @bind="selectedHemocentro.Nome" class="form-control" />
             </div>
             <div class="col-md-6">
-                <label class="form-label">ID Endereço:</label>
-                <input @bind="selectedHemocentro.IdEndereco" class="form-control" />
+                <label class="form-label">Endereço:</label>
+                <select @bind="selectedHemocentro.IdEndereco" class="form-control">
+                    <option value="">-- Selecione o Endereço --</option>
+                    @foreach (var end in enderecos)
+                    {
+                        <option value="@end.IdEndereco">@end.IdEndereco - @end.Cep, @end.Cidade</option>
+                    }
+                </select>
             </div>
             <div class="col-md-6">
                 <label class="form-label">Telefone:</label>
@@ -88,11 +94,13 @@ else
 
 @code {
     private List<Hemocentro> hemocentros = new();
+    private List<Endereco> enderecos = new();
     private Hemocentro selectedHemocentro = new Hemocentro();
 
     protected override async Task OnInitializedAsync()
     {
         hemocentros = await HemocentroService.GetHemocentrosAsync();
+        enderecos = await EnderecoService.GetEnderecosAsync();
         Console.WriteLine("Página carregada!");
     }
 

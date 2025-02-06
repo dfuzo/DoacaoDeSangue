@@ -3,6 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\coletas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\coletas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\doacoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\doacoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\doadores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\doadores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\enderecos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\enderecos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\estoques.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\estoques.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\funcionarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\funcionarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\hemocentros.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\hemocentros.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\receptores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\receptores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\transfusoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\transfusoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\comprovante.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\comprovante.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -107,56 +151,16 @@
       "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\transfusoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\transfusoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\tipossanguineos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\tipossanguineos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\receptores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\receptores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\hemocentros.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\hemocentros.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\funcionarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\funcionarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\enderecos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\enderecos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\doadores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\doadores.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\doacoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\doacoes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\comprovante.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\comprovante.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\components\\pages\\coletas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|solutionrelative:trabalho_bd\\components\\pages\\coletas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{636C33D7-BEE0-42D1-948A-54743D81F58D}|Trabalho_BD\\Trabalho_BD.csproj|c:\\users\\davif\\source\\repos\\trabalho_bd\\trabalho_bd\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -178,72 +182,153 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Funcionarios.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAHIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:24:55.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hemocentros.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:25:08.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Receptores.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Receptores.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Receptores.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Receptores.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Receptores.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:25:31.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enderecos.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Enderecos.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Enderecos.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Enderecos.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Enderecos.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:24:40.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Doacoes.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doacoes.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Doacoes.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doacoes.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Doacoes.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:20:39.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\appsettings.json",
-              "RelativeDocumentMoniker": "Trabalho_BD\\appsettings.json",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\appsettings.json",
-              "RelativeToolTip": "Trabalho_BD\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-06T01:31:06.965Z",
+              "Title": "Coletas.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Coletas.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Coletas.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Coletas.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Coletas.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:19:38.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MyAppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\MyAppDbContext.cs",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\MyAppDbContext.cs",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\MyAppDbContext.cs",
-              "RelativeToolTip": "Trabalho_BD\\Data\\MyAppDbContext.cs",
-              "ViewState": "AgIAAE8BAAAAAAAAAAAAAJgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:52.286Z"
+              "Title": "Doadores.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doadores.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Doadores.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doadores.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Doadores.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:24:24.979Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TipoSanguineoService.cs",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
-              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:44.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReceptorService.cs",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\ReceptorService.cs",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\ReceptorService.cs",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\ReceptorService.cs",
-              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\ReceptorService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:40.008Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HemocentroService.cs",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\HemocentroService.cs",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\HemocentroService.cs",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\HemocentroService.cs",
-              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\HemocentroService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:22.214Z"
+              "Title": "Estoques.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Estoques.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Estoques.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Estoques.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Estoques.razor",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T02:37:44.29Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Transfusoes.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T00:51:56.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EstoqueService.cs",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\EstoqueService.cs",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\EstoqueService.cs",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\EstoqueService.cs",
+              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\EstoqueService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:27:11.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\_Imports.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:26:05.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "FuncionarioService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\FuncionarioService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\FuncionarioService.cs",
@@ -256,18 +341,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "EstoqueService.cs",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\EstoqueService.cs",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\EstoqueService.cs",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\EstoqueService.cs",
-              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\EstoqueService.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:11.357Z"
+              "Title": "Comprovante.razor",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Comprovante.razor",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Comprovante.razor",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Comprovante.razor",
+              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Comprovante.razor",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T00:56:48.968Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\appsettings.json",
+              "RelativeDocumentMoniker": "Trabalho_BD\\appsettings.json",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\appsettings.json",
+              "RelativeToolTip": "Trabalho_BD\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-06T01:31:06.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HemocentroService.cs",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\HemocentroService.cs",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\HemocentroService.cs",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\HemocentroService.cs",
+              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\HemocentroService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:27:22.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReceptorService.cs",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\ReceptorService.cs",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\ReceptorService.cs",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\ReceptorService.cs",
+              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\ReceptorService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:27:40.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TipoSanguineoService.cs",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
+              "RelativeToolTip": "Trabalho_BD\\Data\\Services\\TipoSanguineoService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:27:44.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MyAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\MyAppDbContext.cs",
+              "RelativeDocumentMoniker": "Trabalho_BD\\Data\\MyAppDbContext.cs",
+              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\MyAppDbContext.cs",
+              "RelativeToolTip": "Trabalho_BD\\Data\\MyAppDbContext.cs",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAAAJgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:27:52.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Program.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Program.cs",
@@ -279,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "TransfusaoService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\TransfusaoService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\TransfusaoService.cs",
@@ -291,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "EnderecoService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\EnderecoService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\EnderecoService.cs",
@@ -303,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "DoadorService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\DoadorService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\DoadorService.cs",
@@ -315,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "Transfusao.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Transfusao.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Transfusao.cs",
@@ -327,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "PdfService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\PdfService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\PdfService.cs",
@@ -339,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "TipoSanguineo.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\TipoSanguineo.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\TipoSanguineo.cs",
@@ -351,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "Receptor.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Receptor.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Receptor.cs",
@@ -363,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "Funcionario.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Funcionario.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Funcionario.cs",
@@ -375,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "Hemocentro.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Hemocentro.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Hemocentro.cs",
@@ -387,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "Estoque.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Estoque.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Estoque.cs",
@@ -399,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "ColetaService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\ColetaService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\ColetaService.cs",
@@ -411,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "DoacaoService.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Services\\DoacaoService.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Services\\DoacaoService.cs",
@@ -423,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "Endereco.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Endereco.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Endereco.cs",
@@ -435,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "Doacao.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Doacao.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Doacao.cs",
@@ -447,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "Coleta.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Coleta.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Coleta.cs",
@@ -459,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "Doador.cs",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Data\\Models\\Doador.cs",
               "RelativeDocumentMoniker": "Trabalho_BD\\Data\\Models\\Doador.cs",
@@ -471,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Routes.razor",
@@ -483,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\App.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\App.razor",
@@ -495,19 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\_Imports.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\_Imports.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:26:05.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "TiposSanguineos.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\TiposSanguineos.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\TiposSanguineos.razor",
@@ -519,19 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Receptores.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Receptores.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Receptores.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Receptores.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Receptores.razor",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:25:31.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Home.razor",
@@ -543,31 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Hemocentros.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Hemocentros.razor",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:25:08.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Funcionarios.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Funcionarios.razor",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:24:55.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 39,
               "Title": "Error.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Error.razor",
@@ -579,55 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Transfusoes.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Transfusoes.razor",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAAADYAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T00:51:56.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Enderecos.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Enderecos.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Enderecos.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Enderecos.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Enderecos.razor",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:24:40.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Doadores.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doadores.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Doadores.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doadores.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Doadores.razor",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:24:24.979Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Doacoes.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doacoes.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Doacoes.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Doacoes.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Doacoes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:20:39.688Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "Trabalho_BD\\wwwroot\\app.css",
@@ -639,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Layout\\NavMenu.razor",
@@ -651,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Layout\\MainLayout.razor",
@@ -660,30 +711,6 @@
               "ViewState": "AgIAABcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-06T01:19:43.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Coletas.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Coletas.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Coletas.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Coletas.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Coletas.razor",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAE4AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T01:19:38.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Comprovante.razor",
-              "DocumentMoniker": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Comprovante.razor",
-              "RelativeDocumentMoniker": "Trabalho_BD\\Components\\Pages\\Comprovante.razor",
-              "ToolTip": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Components\\Pages\\Comprovante.razor",
-              "RelativeToolTip": "Trabalho_BD\\Components\\Pages\\Comprovante.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T00:56:48.968Z"
             }
           ]
         }

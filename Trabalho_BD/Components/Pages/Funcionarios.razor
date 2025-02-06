@@ -85,9 +85,15 @@ else
                 <label class="form-label">Cargo:</label>
                 <input @bind="selectedFuncionario.Cargo" class="form-control" />
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Hemocentro:</label>
-                <input @bind="selectedFuncionario.Hemocentro" class="form-control" />
+            <div class="mb-3">
+                <label>Hemocentro:</label>
+                <select @bind="selectedFuncionario.Hemocentro" class="form-control">
+                    <option value="">-- Selecione o hemocentro --</option>
+                    @foreach (var hemocentro in hemocentros)
+                    {
+                        <option value="@hemocentro.Cnpj">@hemocentro.Cnpj - @hemocentro.Nome</option>
+                    }
+                </select>
             </div>
             <div class="d-flex justify-content-end mt-3">
                 <button @onclick="SaveFuncionario" class="btn btn-success me-2">
@@ -100,11 +106,13 @@ else
 
 @code {
     private List<Funcionario> funcionarios = new();
+    private List<Hemocentro> hemocentros = new();
     private Funcionario selectedFuncionario = new Funcionario();
 
     protected override async Task OnInitializedAsync()
     {
         funcionarios = await FuncionarioService.GetFuncionariosAsync();
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
         Console.WriteLine("Página carregada!");
     }
 
@@ -115,12 +123,10 @@ else
 
         if (existing == null)
         {
-            // Doesn’t exist => Insert
             await FuncionarioService.AddFuncionarioAsync(selectedFuncionario);
         }
         else
         {
-            // Exists => Update
             await FuncionarioService.UpdateFuncionarioAsync(selectedFuncionario);
         }
 
