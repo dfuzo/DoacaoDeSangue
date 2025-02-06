@@ -123,18 +123,15 @@ else
 
     private async Task SaveReceptor()
     {
-        // Check if a Funcionario with this Ponto already exists in the DB
         var existing = await ReceptorService
             .GetReceptorByIdAsync(selectedReceptor.Cpf);
 
         if (existing == null)
         {
-            // Doesn’t exist => Insert
             await ReceptorService.AddReceptorAsync(selectedReceptor);
         }
         else
         {
-            // Exists => Update
             await ReceptorService.UpdateReceptorAsync(selectedReceptor);
         }
         _navigationManager.NavigateTo("/receptores", forceLoad: true);

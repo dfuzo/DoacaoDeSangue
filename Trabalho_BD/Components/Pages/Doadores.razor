@@ -158,7 +158,7 @@ else
     private async Task DeleteDoador(string cpf)
     {
         await DoadorService.DeleteDoadorAsync(cpf);
-        doadores = await DoadorService.GetDoadoresAsync(); // ✅ Refresh list after delete
-        StateHasChanged(); // ✅ Ensure UI updates
+        doadores = await DoadorService.GetDoadoresAsync();
+        StateHasChanged();
     }
 }

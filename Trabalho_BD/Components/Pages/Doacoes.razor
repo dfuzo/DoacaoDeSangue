@@ -140,7 +140,7 @@ else
     private async Task DeleteDoacao(int id)
     {
         await DoacaoService.DeleteDoacaoAsync(id);
-        doacoes = await DoacaoService.GetDoacaosAsync(); // ✅ Refresh list after delete
-        StateHasChanged(); // ✅ Ensure UI updates
+        doacoes = await DoacaoService.GetDoacaosAsync();
+        StateHasChanged();
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6mNlVSKTrac=",
+  "dgSpecHash": "jCGuqNmMHvo=",
   "success": true,
   "projectFilePath": "C:\\Users\\davif\\source\\repos\\Trabalho_BD\\Trabalho_BD\\Trabalho_BD.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\davif\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\davif\\.nuget\\packages\\questpdf\\2025.1.1\\questpdf.2025.1.1.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

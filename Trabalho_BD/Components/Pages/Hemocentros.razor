@@ -98,18 +98,15 @@ else
 
     private async Task SaveHemocentro()
     {
-        // Check if a Funcionario with this Ponto already exists in the DB
         var existing = await HemocentroService
             .GetHemocentroByIdAsync(selectedHemocentro.Cnpj);
 
         if (existing == null)
         {
-            // Doesn’t exist => Insert
             await HemocentroService.AddHemocentroAsync(selectedHemocentro);
         }
         else
         {
-            // Exists => Update
             await HemocentroService.UpdateHemocentroAsync(selectedHemocentro);
         }
 

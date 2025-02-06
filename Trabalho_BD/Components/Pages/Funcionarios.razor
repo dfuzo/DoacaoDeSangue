@@ -110,7 +110,6 @@ else
 
     private async Task SaveFuncionario()
     {
-        // Check if a Funcionario with this Ponto already exists in the DB
         var existing = await FuncionarioService
             .GetFuncionarioByIdAsync(selectedFuncionario.Ponto);
 

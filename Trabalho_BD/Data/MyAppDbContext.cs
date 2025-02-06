@@ -10,8 +10,6 @@ namespace Trabalho_BD.Data
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             ChangeTracker.AutoDetectChangesEnabled = false;
         }
-
-        // ✅ Consistently pluralized DbSet<T> names
         public virtual DbSet<Coleta> Coletas { get; set; }
         public virtual DbSet<Doacao> Doacoes { get; set; }
         public virtual DbSet<Doador> Doadores { get; set; }
@@ -114,9 +112,9 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Endereco>(entity =>
             {
-                entity.ToTable("Endereco"); // Table name
+                entity.ToTable("Endereco"); 
 
-                entity.HasKey(e => e.IdEndereco).HasName("PK_Endereco"); // Primary key
+                entity.HasKey(e => e.IdEndereco).HasName("PK_Endereco"); 
 
                 entity.Property(e => e.IdEndereco)
                     .HasColumnName("Id_Endereco");
@@ -162,15 +160,15 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Estoque>(entity =>
             {
-                entity.ToTable("Estoque"); // Table name
+                entity.ToTable("Estoque");
 
-                entity.HasKey(e => e.IdEstoque).HasName("PK_Estoque"); // Primary key
+                entity.HasKey(e => e.IdEstoque).HasName("PK_Estoque");
 
                 entity.Property(e => e.IdEstoque)
                     .HasColumnName("Id_Estoque");
 
                 entity.Property(e => e.IdHemocentro)
-                    .HasMaxLength(11) // Assuming it's a VARCHAR(11) based on typical CPF/CNPJ usage
+                    .HasMaxLength(11) 
                     .IsUnicode(false)
                     .IsRequired()
                     .HasColumnName("Id_Hemocentro");
@@ -185,7 +183,6 @@ namespace Trabalho_BD.Data
                     .IsRequired()
                     .HasColumnName("Quantidade");
 
-                // Foreign Key Relationship
                 entity.HasOne(d => d.IdHemocentroNavigation)
                     .WithMany(p => p.Estoques)
                     .HasForeignKey(d => d.IdHemocentro)
@@ -194,13 +191,11 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Funcionario>(entity =>
             {
-                entity.ToTable("Funcionario"); // Table name mapping
+                entity.ToTable("Funcionario");
 
-                // Primary Key
                 entity.HasKey(e => e.Ponto)
                     .HasName("PK_Funcionario");
 
-                // Properties
                 entity.Property(e => e.Ponto)
                     .HasMaxLength(10)
                     .IsUnicode(false)
@@ -236,27 +231,24 @@ namespace Trabalho_BD.Data
                     .HasColumnName("Cargo");
 
                 entity.Property(e => e.Hemocentro)
-                    .HasMaxLength(14) // Assuming it's a VARCHAR(14)
+                    .HasMaxLength(14) 
                     .IsUnicode(false)
                     .IsRequired()
                     .HasColumnName("Hemocentro");
 
-                // Foreign Key Relationship
-                entity.HasOne(d => d.HemocentroNavigation) // Navigation property in Funcionario model
-                    .WithMany(p => p.Funcionarios) // One-to-Many Relationship
+                entity.HasOne(d => d.HemocentroNavigation)
+                    .WithMany(p => p.Funcionarios)
                     .HasForeignKey(d => d.Hemocentro)
                     .HasConstraintName("FK_Funcionario_Hemocentro");
             });
 
             modelBuilder.Entity<Hemocentro>(entity =>
             {
-                entity.ToTable("Hemocentro"); // Table name mapping
+                entity.ToTable("Hemocentro"); 
 
-                // Primary Key
                 entity.HasKey(e => e.Cnpj)
                     .HasName("PK_Hemocentro");
 
-                // Properties
                 entity.Property(e => e.Cnpj)
                     .HasMaxLength(14)
                     .IsUnicode(false)
@@ -282,7 +274,6 @@ namespace Trabalho_BD.Data
                     .IsUnicode(false)
                     .HasColumnName("Email");
 
-                // Foreign Key Relationship with Endereco
                 entity.HasOne(d => d.IdEnderecoNavigation)
                     .WithMany(p => p.Hemocentros)
                     .HasForeignKey(d => d.IdEndereco)
@@ -291,13 +282,11 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Receptor>(entity =>
             {
-                entity.ToTable("Receptor"); // Table name mapping
+                entity.ToTable("Receptor"); 
 
-                // Primary Key
                 entity.HasKey(e => e.Cpf)
                     .HasName("PK_Receptor");
 
-                // Properties
                 entity.Property(e => e.Cpf)
                     .HasMaxLength(11)
                     .IsUnicode(false)
@@ -340,13 +329,11 @@ namespace Trabalho_BD.Data
                 entity.Property(e => e.IdEndereco)
                     .HasColumnName("Id_Endereco");
 
-                // Foreign Key Relationship with TipoSanguineo
                 entity.HasOne(d => d.IdTipoSanguineoNavigation)
                     .WithMany(p => p.Receptores)
                     .HasForeignKey(d => d.IdTipoSanguineo)
                     .HasConstraintName("FK_Receptor_IdTipoSanguineo");
 
-                // Foreign Key Relationship with Endereco
                 entity.HasOne(d => d.IdEnderecoNavigation)
                     .WithMany(p => p.Receptores)
                     .HasForeignKey(d => d.IdEndereco)
@@ -355,13 +342,11 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<TipoSanguineo>(entity =>
             {
-                entity.ToTable("Tipo_Sanguineo"); // Table name mapping
+                entity.ToTable("Tipo_Sanguineo");
 
-                // Primary Key
                 entity.HasKey(e => e.IdTipoSanguineo)
                     .HasName("PK_Tipo_Sanguineo");
 
-                // Properties
                 entity.Property(e => e.IdTipoSanguineo)
                     .HasColumnName("Id_Tipo_Sanguineo");
 
@@ -380,13 +365,11 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Transfusao>(entity =>
             {
-                entity.ToTable("Transfusao"); // Table name mapping
+                entity.ToTable("Transfusao"); 
 
-                // Primary Key
                 entity.HasKey(e => e.IdTransfusao)
                     .HasName("PK_Transfusao");
 
-                // Properties
                 entity.Property(e => e.IdTransfusao)
                     .HasColumnName("Id_Transfusao");
 
@@ -423,7 +406,6 @@ namespace Trabalho_BD.Data
                     .HasColumnType("varbinary(max)")
                     .HasColumnName("Comprovante");
 
-                // Foreign Key Relationships
                 entity.HasOne(d => d.IdColetaNavigation)
                     .WithMany(p => p.Transfusoes)
                     .HasForeignKey(d => d.IdColeta)

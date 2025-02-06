@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb2xldGFzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/davif/source/repos/Trabalho_BD/Trabalho_BD/Components/Pages/Comprovante.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wcm92YW50ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/davif/source/repos/Trabalho_BD/Trabalho_BD/Components/Pages/Doacoes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEb2Fjb2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

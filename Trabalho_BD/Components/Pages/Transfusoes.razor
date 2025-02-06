@@ -52,6 +52,9 @@ else
                                 <td>@transfusao.IdHemocentro</td>
                                 <td>@transfusao.IdTipoSanguineo</td>
                                 <td>
+                                    <button @onclick="() => GerarPdf(transfusao)" class="btn btn-info btn-sm">
+                                        <i class="bi bi-pencil-square"></i>Comprovante
+                                    </button>
                                     <button @onclick="() => EditTransfusao(transfusao)" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Editar
                                     </button>
@@ -126,6 +129,13 @@ else
             await TransfusaoService.AddTransfusaoAsync(selectedTransfusao);
         }
         _navigationManager.NavigateTo("/transfusoes", forceLoad: true);
+    }
+
+    private async Task GerarPdf(Transfusao transfusao){
+        int id = transfusao.IdTransfusao;
+        await TransfusaoService.GerarComprovante(transfusao);
+        StateHasChanged();
+        _navigationManager.NavigateTo($"/comprovante/{transfusao.IdTransfusao}");
     }
 
     private void EditTransfusao(Transfusao transfusao)
