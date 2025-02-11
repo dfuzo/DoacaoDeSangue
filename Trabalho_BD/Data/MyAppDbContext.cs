@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Trabalho_BD.Data.Models;
 
 namespace Trabalho_BD.Data
@@ -20,6 +21,7 @@ namespace Trabalho_BD.Data
         public virtual DbSet<Receptor> Receptores { get; set; }
         public virtual DbSet<TipoSanguineo> TipoSanguineos { get; set; }
         public virtual DbSet<Transfusao> Transfusoes { get; set; }
+        public DbSet<DoadorHistorico> DoadoresHistorico { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -112,9 +114,9 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Endereco>(entity =>
             {
-                entity.ToTable("Endereco"); 
+                entity.ToTable("Endereco");
 
-                entity.HasKey(e => e.IdEndereco).HasName("PK_Endereco"); 
+                entity.HasKey(e => e.IdEndereco).HasName("PK_Endereco");
 
                 entity.Property(e => e.IdEndereco)
                     .HasColumnName("Id_Endereco");
@@ -168,7 +170,7 @@ namespace Trabalho_BD.Data
                     .HasColumnName("Id_Estoque");
 
                 entity.Property(e => e.IdHemocentro)
-                    .HasMaxLength(11) 
+                    .HasMaxLength(11)
                     .IsUnicode(false)
                     .IsRequired()
                     .HasColumnName("Id_Hemocentro");
@@ -231,7 +233,7 @@ namespace Trabalho_BD.Data
                     .HasColumnName("Cargo");
 
                 entity.Property(e => e.Hemocentro)
-                    .HasMaxLength(14) 
+                    .HasMaxLength(14)
                     .IsUnicode(false)
                     .IsRequired()
                     .HasColumnName("Hemocentro");
@@ -244,7 +246,7 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Hemocentro>(entity =>
             {
-                entity.ToTable("Hemocentro"); 
+                entity.ToTable("Hemocentro");
 
                 entity.HasKey(e => e.Cnpj)
                     .HasName("PK_Hemocentro");
@@ -282,7 +284,7 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Receptor>(entity =>
             {
-                entity.ToTable("Receptor"); 
+                entity.ToTable("Receptor");
 
                 entity.HasKey(e => e.Cpf)
                     .HasName("PK_Receptor");
@@ -365,7 +367,7 @@ namespace Trabalho_BD.Data
 
             modelBuilder.Entity<Transfusao>(entity =>
             {
-                entity.ToTable("Transfusao"); 
+                entity.ToTable("Transfusao");
 
                 entity.HasKey(e => e.IdTransfusao)
                     .HasName("PK_Transfusao");
@@ -430,8 +432,12 @@ namespace Trabalho_BD.Data
                     .WithMany(p => p.Transfusoes)
                     .HasForeignKey(d => d.IdTipoSanguineo)
                     .HasConstraintName("FK_Transfusao_IdTipoSanguineo");
-            });
 
+                modelBuilder.Entity<DoadorHistorico>()
+                   .HasNoKey()
+                   .ToView("vw_Doador_Historico");
+
+            });
         }
     }
 }

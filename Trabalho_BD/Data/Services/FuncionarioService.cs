@@ -1,5 +1,8 @@
 ﻿using Trabalho_BD.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+
 
 namespace Trabalho_BD.Data.Services
 {
@@ -12,9 +15,17 @@ namespace Trabalho_BD.Data.Services
             _context = context;
         }
 
-        public async Task<List<Funcionario>> GetFuncionariosAsync()
+        public async Task<List<Funcionario>> GetFuncionariosAsync(string? hemocentroId = null, string? cargo = null)
         {
-            return await _context.Funcionarios.ToListAsync();
+            var parametros = new List<SqlParameter>
+            {
+                new SqlParameter("@HemocentroID", hemocentroId ?? (object)DBNull.Value),
+                new SqlParameter("@Cargo", cargo ?? (object)DBNull.Value)
+            };
+
+            return await _context.Funcionarios
+                .FromSqlRaw("EXEC sp_ListarFuncionarios @HemocentroID, @Cargo", parametros.ToArray())
+                .ToListAsync();
         }
 
         public async Task<Funcionario?> GetFuncionarioByIdAsync(string id)
@@ -22,24 +33,24 @@ namespace Trabalho_BD.Data.Services
             return await _context.Funcionarios.FindAsync(id);
         }
 
-        public async Task AddFuncionarioAsync(Funcionario Funcionario)
+        public async Task AddFuncionarioAsync(Funcionario funcionario)
         {
-            _context.Funcionarios.Add(Funcionario);
+            _context.Funcionarios.Add(funcionario);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateFuncionarioAsync(Funcionario Funcionario)
+        public async Task UpdateFuncionarioAsync(Funcionario funcionario)
         {
-            _context.Funcionarios.Update(Funcionario);
+            _context.Funcionarios.Update(funcionario);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteFuncionarioAsync(string id)
         {
-            var Funcionario = await _context.Funcionarios.FindAsync(id);
-            if (Funcionario != null)
+            var funcionario = await _context.Funcionarios.FindAsync(id);
+            if (funcionario != null)
             {
-                _context.Funcionarios.Remove(Funcionario);
+                _context.Funcionarios.Remove(funcionario);
                 await _context.SaveChangesAsync();
             }
         }

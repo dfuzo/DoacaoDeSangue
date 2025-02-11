@@ -17,6 +17,31 @@ else
     <div class="container mt-4">
         <h2 class="text-center mb-4">Gerenciamento de Funcionários</h2>
 
+        <div class="card shadow p-4 mb-4">
+            <h4 class="mb-3">Filtrar Funcionários</h4>
+            <div class="row">
+                <div class="col-md-5">
+                    <label class="form-label">Filtrar por Hemocentro:</label>
+                    <select @bind="hemocentroFiltro" class="form-control">
+                        <option value="">-- Selecione um Hemocentro --</option>
+                        @foreach (var hemocentro in hemocentros)
+                        {
+                            <option value="@hemocentro.Cnpj">@hemocentro.Nome</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label">Filtrar por Cargo:</label>
+                    <input @bind="cargoFiltro" class="form-control" placeholder="Digite o cargo (ex: Médico)" />
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button @onclick="AplicarFiltros" class="btn btn-primary w-100">
+                        <i class="bi bi-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="card shadow p-4">
             <h4 class="mb-3">Lista de Funcionários</h4>
             <div class="table-responsive">
@@ -108,12 +133,28 @@ else
     private List<Funcionario> funcionarios = new();
     private List<Hemocentro> hemocentros = new();
     private Funcionario selectedFuncionario = new Funcionario();
+    private string hemocentroFiltro = "";
+    private string cargoFiltro = "";
 
     protected override async Task OnInitializedAsync()
     {
-        funcionarios = await FuncionarioService.GetFuncionariosAsync();
-        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        await CarregarDados();
         Console.WriteLine("Página carregada!");
+    }
+
+    private async Task CarregarDados()
+    {
+        hemocentros = await HemocentroService.GetHemocentrosAsync();
+        funcionarios = await FuncionarioService.GetFuncionariosAsync();
+    }
+
+    private async Task AplicarFiltros()
+    {
+        funcionarios = await FuncionarioService.GetFuncionariosAsync(
+            string.IsNullOrEmpty(hemocentroFiltro) ? null : hemocentroFiltro,
+            string.IsNullOrEmpty(cargoFiltro) ? null : cargoFiltro
+        );
+        StateHasChanged();
     }
 
     private async Task SaveFuncionario()
@@ -130,28 +171,27 @@ else
             await FuncionarioService.UpdateFuncionarioAsync(selectedFuncionario);
         }
 
+        await CarregarDados();
         _navigationManager.NavigateTo("/funcionarios", forceLoad: true);
     }
-
 
     private void EditFuncionario(Funcionario funcionario)
     {
         selectedFuncionario = new Funcionario
-        {
-            Ponto = funcionario.Ponto,
-            Nome = funcionario.Nome,
-            Sexo = funcionario.Sexo,
-            Telefone = funcionario.Telefone,
-            Email = funcionario.Email,
-            Cargo = funcionario.Cargo,
-            Hemocentro = funcionario.Hemocentro
-        };
+            {
+                Ponto = funcionario.Ponto,
+                Nome = funcionario.Nome,
+                Sexo = funcionario.Sexo,
+                Telefone = funcionario.Telefone,
+                Email = funcionario.Email,
+                Cargo = funcionario.Cargo,
+                Hemocentro = funcionario.Hemocentro
+            };
     }
 
     private async Task DeleteFuncionario(string ponto)
     {
         await FuncionarioService.DeleteFuncionarioAsync(ponto);
-        funcionarios = await FuncionarioService.GetFuncionariosAsync();
-        StateHasChanged();
+        await CarregarDados();
     }
 }

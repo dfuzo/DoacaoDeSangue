@@ -29,6 +29,8 @@ builder.Services.AddScoped<ReceptorService>();
 builder.Services.AddScoped<TipoSanguineoService>();
 builder.Services.AddScoped<TransfusaoService>();
 builder.Services.AddScoped<PdfService>();
+builder.Services.AddScoped<DoadorHistoricoService>();
+
 
 var app = builder.Build();
 

@@ -1,0 +1,66 @@
+﻿@page "/historicodoadores"
+@using Trabalho_BD.Data.Models
+@using Trabalho_BD.Data.Services
+@inject DoadorHistoricoService DoadorHistoricoService
+
+<h3 class="text-center text-primary">Histórico de Doadores</h3>
+
+@if (doadores == null)
+{
+    <div class="text-center mt-4">
+        <p class="text-muted">Carregando...</p>
+    </div>
+}
+else if (doadores.Count == 0)
+{
+    <div class="text-center mt-4">
+        <p class="text-warning">Nenhum doador encontrado.</p>
+    </div>
+}
+else
+{
+    <div class="table-responsive mt-4">
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>Tipo Sanguíneo</th>
+                    <th>Total Doações</th>
+                    <th>Volume Total</th>
+                    <th>Última Doação</th>
+                    <th>Hemocentro</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var doador in doadores)
+                {
+                    <tr class="align-middle">
+                        <td>@doador.Cpf</td>
+                        <td>@doador.Nome</td>
+                        <td><span class="badge bg-danger">@doador.Tipo_Sanguineo</span></td>
+                        <td>@doador.Total_Doacoes</td>
+                        <td>@doador.Volume_Total_Doado ml</td>
+                        <td>@(doador.Ultima_Doacao?.ToString("dd/MM/yyyy") ?? "Nunca")</td>
+                        <td>@(string.IsNullOrEmpty(doador.Nome_Hemocentro) ? "Desconhecido" : doador.Nome_Hemocentro)</td>
+                        <td>
+                            <span class="badge @(doador.Status_Doador == "Ativo" ? "bg-success" : "bg-secondary")">
+                                @doador.Status_Doador
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private List<DoadorHistorico> doadores = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        doadores = await DoadorHistoricoService.GetHistoricoDoadoresAsync();
+    }
+}
